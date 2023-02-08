@@ -264,7 +264,8 @@
   
     const header = {'Content-Type':'application/json'}
     cform.addEventListener('submit', function(e) {
-       
+        var date = new Date().toISOString().split('T');
+    console.log(date);
         e.preventDefault();
       
         fetch('https://coral-app-cer48.ondigitalocean.app/roles/sendData/roles/sendData', {
@@ -273,7 +274,8 @@
             name:document.getElementById('cname').value,
             phone:document.getElementById('cphone').value,
            email:document.getElementById('cemail').value,
-            message:document.getElementById('cmessage').value
+            message:document.getElementById('cmessage').value,
+           date:date
         }),
         mode:'no-cors',
         headers:headers
@@ -286,7 +288,9 @@
     </script>
     <script>
         const form = document.getElementById('form');
-  
+        
+    var date = new Date().toISOString().split('T');
+    console.log(date);
     const headers = {'Content-Type':'application/json'}
     form.addEventListener('submit', function(e) {
        
@@ -301,7 +305,8 @@
            semester:document.getElementById('semester').value,
             department:document.getElementById('department').value,
             skills:document.getElementById('skills').value,
-            github:document.getElementById('github').value
+            github:document.getElementById('github').value,
+           date:date
         }),
         mode:'no-cors',
         headers:headers
